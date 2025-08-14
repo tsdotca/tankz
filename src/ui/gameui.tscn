@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://d03fnmb0wsyck"]
+
+[ext_resource type="Script" uid="uid://d082x21hm2m4j" path="res://src/ui/game_ui.gd" id="1_fsbhu"]
+[ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://src/ui/tankz_reg_regular.tres" id="2_j7ebe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rnkn6"]
+
+[node name="GameUi" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_fsbhu")
+
+[node name="Angle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 39.0
+text = "{{ angle }}"
+vertical_alignment = 1
+
+[node name="Power" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 71.0
+text = "{{ power }}"
+vertical_alignment = 1
+
+[node name="Direction" type="Label" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 39.0
+text = "{{ direction }}"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 48.0
+offset_right = 1136.0
+offset_bottom = 71.0
+text = "{{ hp }}"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Wind" type="Label" parent="."]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 1152.0
+offset_bottom = 71.0
+text = "{{ wind }}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 39.0
+theme = ExtResource("2_j7ebe")
+text = "{{ player_name }}"
+label_settings = SubResource("LabelSettings_rnkn6")
+horizontal_alignment = 1
+vertical_alignment = 1
