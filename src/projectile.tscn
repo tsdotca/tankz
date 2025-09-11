@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://vsoehhikb5ij"]
+[gd_scene load_steps=4 format=3 uid="uid://vsoehhikb5ij"]
 
 [ext_resource type="Script" uid="uid://dsnbd4hrwwuc1" path="res://src/projectile.gd" id="1_2klnc"]
+[ext_resource type="Texture2D" uid="uid://csjqd8ws67hfx" path="res://assets/tanks/tank_bullet1.png" id="2_dve2u"]
 
-[node name="Projectile" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dve2u"]
+size = Vector2(32, 32)
+
+[node name="Projectile" type="StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_2klnc")
 
-[node name="color" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
+[node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+texture = ExtResource("2_dve2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_dve2u")

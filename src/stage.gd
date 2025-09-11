@@ -9,28 +9,14 @@
 ## All spots a tank occupies are cleared where the tank spawns, and keeping with
 ## the original game's (silly) logic, rotating the turret clears a small area
 ## around the tank.
+
+
 class_name Stage extends Node2D
 
-var h := 128
-var w := 128
-# TODO: Port this to C++ for more precise control.
+
 var _meat = []
 
+var wind: Vector2  # (direction, speed)
 var tanks := []
-
-
-func _ready() -> void:
-	pass
-
-
-
-func generate_flat_world(y=0):
-	pass
-	
-	
-func world_from_bitmap(bitmap: BitMap) -> Stage:
-	return null
-
-
-func is_occupied(x, y):
-	pass
+var h := 640
+var w := 480

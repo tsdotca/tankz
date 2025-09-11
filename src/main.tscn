@@ -10,36 +10,24 @@ color = Color(0.392157, 0.584314, 0.929412, 1)
 script = ExtResource("1_eewff")
 metadata/_edit_horizontal_guides_ = [-80.0]
 
-[node name="Origin" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="NewGameButton" type="Button" parent="Origin"]
-layout_mode = 2
-offset_left = 512.0
-offset_top = 256.0
-offset_right = 640.0
-offset_bottom = 287.0
-text = "new game"
-
-[node name="NewGameRect" type="ColorRect" parent="Origin/NewGameButton"]
+[node name="NewGamePopup" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 136.0
-offset_right = 584.0
-offset_bottom = 272.0
+offset_left = 648.0
+offset_top = 256.0
+offset_right = 1096.0
+offset_bottom = 528.0
 color = Color(0.129412, 0.258824, 0.388235, 1)
 script = ExtResource("2_5q4o7")
 
-[node name="CloseButton" type="Button" parent="Origin/NewGameButton/NewGameRect"]
+[node name="CloseButton" type="Button" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 416.0
 offset_right = 448.0
 offset_bottom = 32.0
 text = "X"
 
-[node name="GameConfigButton" type="Button" parent="Origin/NewGameButton/NewGameRect"]
+[node name="GameConfigButton" type="Button" parent="NewGamePopup"]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 224.0
@@ -47,7 +35,7 @@ offset_right = 144.0
 offset_bottom = 255.0
 text = "Configure game settings..."
 
-[node name="Label" type="Label" parent="Origin/NewGameButton/NewGameRect"]
+[node name="Label" type="Label" parent="NewGamePopup"]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 16.0
@@ -56,7 +44,7 @@ offset_bottom = 48.0
 text = "player name:"
 vertical_alignment = 1
 
-[node name="PlayerNameEdit" type="LineEdit" parent="Origin/NewGameButton/NewGameRect"]
+[node name="PlayerNameEdit" type="LineEdit" parent="NewGamePopup"]
 layout_mode = 2
 offset_left = 128.0
 offset_top = 16.0
@@ -64,7 +52,7 @@ offset_right = 368.0
 offset_bottom = 47.0
 placeholder_text = "TankMaster McTankFace"
 
-[node name="Label2" type="Label" parent="Origin/NewGameButton/NewGameRect"]
+[node name="Label2" type="Label" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 84.0
@@ -72,7 +60,7 @@ offset_right = 98.0
 offset_bottom = 107.0
 text = "tank bling:"
 
-[node name="Label3" type="Label" parent="Origin/NewGameButton/NewGameRect"]
+[node name="Label3" type="Label" parent="NewGamePopup"]
 visible = false
 layout_mode = 2
 offset_left = 16.0
@@ -81,7 +69,7 @@ offset_right = 113.0
 offset_bottom = 199.0
 text = "game mode:"
 
-[node name="ColorRect" type="ColorRect" parent="Origin/NewGameButton/NewGameRect"]
+[node name="ColorRect" type="ColorRect" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 300.0
 offset_top = 60.0
@@ -89,26 +77,28 @@ offset_right = 372.0
 offset_bottom = 132.0
 color = Color(0.129412, 0.129412, 0.129412, 1)
 
-[node name="TankPreview" type="TextureRect" parent="Origin/NewGameButton/NewGameRect/ColorRect"]
+[node name="TankPreview" type="TextureRect" parent="NewGamePopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 300.0
+offset_top = 60.0
+offset_right = 340.0
+offset_bottom = 100.0
 
-[node name="PrevTankBlingArrow" type="TextureButton" parent="Origin/NewGameButton/NewGameRect"]
+[node name="PrevTankBlingArrow" type="TextureButton" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 304.0
 offset_top = 136.0
 offset_right = 328.0
 offset_bottom = 152.0
 
-[node name="NextTankBlingArrow" type="TextureButton" parent="Origin/NewGameButton/NewGameRect"]
+[node name="NextTankBlingArrow" type="TextureButton" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 136.0
 offset_right = 368.0
 offset_bottom = 152.0
 
-[node name="StartNewGameButton" type="Button" parent="Origin/NewGameButton/NewGameRect"]
+[node name="StartNewGameButton" type="Button" parent="NewGamePopup"]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 212.0
@@ -116,31 +106,32 @@ offset_right = 440.0
 offset_bottom = 264.0
 text = "PLAY!"
 
-[node name="OptionsButton" type="Button" parent="Origin"]
+[node name="NewGameButton" type="Button" parent="."]
 layout_mode = 2
 offset_left = 512.0
-offset_top = 304.0
+offset_top = 256.0
 offset_right = 640.0
-offset_bottom = 335.0
-text = "options"
+offset_bottom = 287.0
+text = "new game"
 
-[node name="OptionsRect" type="ColorRect" parent="Origin/OptionsButton"]
+[node name="OptionsPopup" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 144.0
-offset_right = 480.0
-offset_bottom = 240.0
+offset_left = 656.0
+offset_top = 304.0
+offset_right = 992.0
+offset_bottom = 544.0
 color = Color(0.129412, 0.258824, 0.388235, 1)
 script = ExtResource("2_5q4o7")
 
-[node name="CloseButton" type="Button" parent="Origin/OptionsButton/OptionsRect"]
+[node name="CloseButton" type="Button" parent="OptionsPopup"]
 layout_mode = 0
 offset_left = 304.0
 offset_right = 336.0
 offset_bottom = 32.0
 text = "X"
 
-[node name="Label" type="Label" parent="Origin/OptionsButton/OptionsRect"]
+[node name="Label" type="Label" parent="OptionsPopup"]
 layout_mode = 1
 offset_left = 16.0
 offset_top = 48.0
@@ -148,7 +139,7 @@ offset_right = 100.0
 offset_bottom = 71.0
 text = "resolution:"
 
-[node name="PlayerNameEdit" type="MenuButton" parent="Origin/OptionsButton/OptionsRect/Label"]
+[node name="PlayerNameEdit" type="MenuButton" parent="OptionsPopup/Label"]
 layout_mode = 0
 offset_left = 144.0
 offset_right = 304.0
@@ -161,7 +152,7 @@ popup/item_1/id = 1
 popup/item_2/text = "multiplayer"
 popup/item_2/id = 2
 
-[node name="Label2" type="Label" parent="Origin/OptionsButton/OptionsRect"]
+[node name="Label2" type="Label" parent="OptionsPopup"]
 layout_mode = 1
 offset_left = 16.0
 offset_top = 80.0
@@ -169,7 +160,7 @@ offset_right = 100.0
 offset_bottom = 103.0
 text = "fullscreen?"
 
-[node name="IsFullscreen" type="CheckBox" parent="Origin/OptionsButton/OptionsRect/Label2"]
+[node name="IsFullscreen" type="CheckBox" parent="OptionsPopup/Label2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 3.81
@@ -181,7 +172,7 @@ offset_top = 48.001
 offset_right = -8.04001
 offset_bottom = 72.001
 
-[node name="Label3" type="Label" parent="Origin/OptionsButton/OptionsRect"]
+[node name="Label3" type="Label" parent="OptionsPopup"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 112.0
@@ -189,7 +180,7 @@ offset_right = 67.0
 offset_bottom = 135.0
 text = "vsync?"
 
-[node name="IsVsync" type="CheckBox" parent="Origin/OptionsButton/OptionsRect/Label3"]
+[node name="IsVsync" type="CheckBox" parent="OptionsPopup/Label3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.275
@@ -201,7 +192,7 @@ offset_top = 79.994
 offset_right = -8.02499
 offset_bottom = 103.994
 
-[node name="Label4" type="Label" parent="Origin/OptionsButton/OptionsRect"]
+[node name="Label4" type="Label" parent="OptionsPopup"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -214,7 +205,7 @@ grow_vertical = 0
 text = "music volume"
 vertical_alignment = 1
 
-[node name="MusicVolume" type="HSlider" parent="Origin/OptionsButton/OptionsRect/Label4"]
+[node name="MusicVolume" type="HSlider" parent="OptionsPopup/Label4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.5
@@ -229,7 +220,7 @@ step = 10.0
 value = 80.0
 rounded = true
 
-[node name="Label5" type="Label" parent="Origin/OptionsButton/OptionsRect"]
+[node name="Label5" type="Label" parent="OptionsPopup"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -241,7 +232,7 @@ offset_bottom = -9.0
 grow_vertical = 0
 text = "sound volume"
 
-[node name="FxVolume" type="HSlider" parent="Origin/OptionsButton/OptionsRect/Label5"]
+[node name="FxVolume" type="HSlider" parent="OptionsPopup/Label5"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.5
@@ -256,7 +247,15 @@ step = 10.0
 value = 80.0
 rounded = true
 
-[node name="QuitButton" type="Button" parent="Origin"]
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 512.0
+offset_top = 304.0
+offset_right = 640.0
+offset_bottom = 335.0
+text = "options"
+
+[node name="QuitButton" type="Button" parent="."]
 layout_mode = 2
 offset_left = 512.0
 offset_top = 352.0
@@ -264,7 +263,7 @@ offset_right = 640.0
 offset_bottom = 383.0
 text = "quit game"
 
-[node name="CopyrightAndVersionInfo" type="Label" parent="Origin"]
+[node name="CopyrightAndVersionInfo" type="Label" parent="."]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 612.0
@@ -272,7 +271,7 @@ offset_right = 292.0
 offset_bottom = 636.0
 text = "{{ tankz_copyright_and_version }}"
 
-[node name="AboutAndInfo" type="Button" parent="Origin"]
+[node name="AboutAndInfo" type="Button" parent="."]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 608.0
@@ -281,17 +280,17 @@ offset_bottom = 639.0
 text = "ⓘ"
 flat = true
 
-[connection signal="pressed" from="Origin/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Origin/NewGameButton/NewGameRect/GameConfigButton" to="." method="_on_game_config_button_pressed"]
-[connection signal="text_changed" from="Origin/NewGameButton/NewGameRect/PlayerNameEdit" to="." method="_on_player_name_edit_text_changed"]
-[connection signal="text_submitted" from="Origin/NewGameButton/NewGameRect/PlayerNameEdit" to="." method="_on_player_name_edit_text_submitted"]
-[connection signal="pressed" from="Origin/NewGameButton/NewGameRect/StartNewGameButton" to="." method="_on_start_new_game_button_pressed"]
-[connection signal="pressed" from="Origin/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Origin/OptionsButton/OptionsRect/Label2/IsFullscreen" to="." method="_on_is_fullscreen_pressed"]
-[connection signal="pressed" from="Origin/OptionsButton/OptionsRect/Label3/IsVsync" to="." method="_on_is_vsync_pressed"]
-[connection signal="toggled" from="Origin/OptionsButton/OptionsRect/Label3/IsVsync" to="." method="_on_is_vsync_toggled"]
-[connection signal="value_changed" from="Origin/OptionsButton/OptionsRect/Label4/MusicVolume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="Origin/OptionsButton/OptionsRect/Label5/FxVolume" to="." method="_on_fx_volume_value_changed"]
-[connection signal="pressed" from="Origin/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Origin/QuitButton" to="." method="_on_quit_btn_pressed"]
-[connection signal="pressed" from="Origin/AboutAndInfo" to="." method="_on_about_and_info_pressed"]
+[connection signal="pressed" from="NewGamePopup/GameConfigButton" to="." method="_on_game_config_button_pressed"]
+[connection signal="text_changed" from="NewGamePopup/PlayerNameEdit" to="." method="_on_player_name_edit_text_changed"]
+[connection signal="text_submitted" from="NewGamePopup/PlayerNameEdit" to="." method="_on_player_name_edit_text_submitted"]
+[connection signal="pressed" from="NewGamePopup/StartNewGameButton" to="." method="_on_start_new_game_button_pressed"]
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="OptionsPopup/Label2/IsFullscreen" to="." method="_on_is_fullscreen_pressed"]
+[connection signal="pressed" from="OptionsPopup/Label3/IsVsync" to="." method="_on_is_vsync_pressed"]
+[connection signal="toggled" from="OptionsPopup/Label3/IsVsync" to="." method="_on_is_vsync_toggled"]
+[connection signal="value_changed" from="OptionsPopup/Label4/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="OptionsPopup/Label5/FxVolume" to="." method="_on_fx_volume_value_changed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="AboutAndInfo" to="." method="_on_about_and_info_pressed"]

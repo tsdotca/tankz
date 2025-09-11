@@ -1,7 +1,19 @@
-# src/ui/game_ui.gd
+## src/ui/game_ui.gd
+## In-game UI for stages.
+class_name GameUi extends Control
 
-extends Control
+# for testing purposes only
+@export var tank: Tank
 
 
-func refresh_from_tankdata(tank):
-	
+func _ready():
+	Tankz.player_ui_updated.connect(self.update)
+	update()
+
+
+func update():
+	$Angle.text = str(tank.angle)
+	$Power.text = str(tank.power)
+	$Direction.text = "--->" if tank.angle > 0 else "<---"
+	$HP.text = str(tank.hp)
+	$Wind.text = str(get_parent().get_parent().wind)

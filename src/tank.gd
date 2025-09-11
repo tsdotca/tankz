@@ -1,12 +1,11 @@
 ## src/tank.gd
 class_name Tank extends Node2D
 
-var hp := 100
-var power := 50
-var angle := 90
+@onready var _turret = $Turret
+@onready var _body = $Body
 
-var money := 0
-var tank_name = ""
-var health = 100
-
-var weapons := {}
+@export var hp := 100  # (0, 100]
+@export var power := 50  # (0, 100]
+var angle :=  0  # radians
+const angle_rate := 0.1   # radians
+var money := 0  #  >= 0

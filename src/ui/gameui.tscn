@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d03fnmb0wsyck"]
 
 [ext_resource type="Script" uid="uid://d082x21hm2m4j" path="res://src/ui/game_ui.gd" id="1_fsbhu"]
-[ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://src/ui/tankz_reg_regular.tres" id="2_j7ebe"]
+[ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://src/ui/tank-reg.tres" id="2_j7ebe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rnkn6"]
 
@@ -9,64 +9,104 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -552.0
+offset_bottom = -584.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.8)
 script = ExtResource("1_fsbhu")
 
 [node name="Angle" type="Label" parent="."]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 256.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.2
+anchor_right = 0.014
+anchor_bottom = 0.2
+offset_left = -0.128
+offset_right = 239.872
+offset_bottom = 23.0
+theme = ExtResource("2_j7ebe")
 text = "{{ angle }}"
 vertical_alignment = 1
 
 [node name="Power" type="Label" parent="."]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 48.0
-offset_right = 256.0
-offset_bottom = 71.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 1.0
+anchor_right = 0.014
+anchor_bottom = 1.0
+offset_left = -0.128
+offset_top = -32.0
+offset_right = 239.872
+offset_bottom = -9.0
+grow_vertical = 0
+theme = ExtResource("2_j7ebe")
 text = "{{ power }}"
 vertical_alignment = 1
 
 [node name="Direction" type="Label" parent="."]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_left = -256.0
+offset_right = -16.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_j7ebe")
 text = "{{ direction }}"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="HP" type="Label" parent="."]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 48.0
-offset_right = 1136.0
-offset_bottom = 71.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -32.0
+offset_right = -16.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_j7ebe")
 text = "{{ hp }}"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Wind" type="Label" parent="."]
-layout_mode = 0
-offset_top = 48.0
-offset_right = 1152.0
-offset_bottom = 71.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -32.0
+offset_right = 192.0
+offset_bottom = -9.0
+grow_vertical = 0
+theme = ExtResource("2_j7ebe")
 text = "{{ wind }}"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerName" type="Label" parent="."]
-layout_mode = 0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 23.0
+grow_horizontal = 0
 theme = ExtResource("2_j7ebe")
 text = "{{ player_name }}"
 label_settings = SubResource("LabelSettings_rnkn6")

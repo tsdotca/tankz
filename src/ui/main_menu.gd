@@ -1,8 +1,7 @@
-## src/main_menu.gd
+## src/ui/main_menu.gd
+class_name MainMenu extends Node
 
-extends Node
-
-@onready var _tank_preview: TextureRect = find_child("TankPreview")
+@onready var _tank_preview: TextureRect = $NewGamePopup/TankPreview
 @onready var _current_tank: int = 0
 @onready var _tank_previews: Array = [
 	preload("res://assets/tanks/tanks_tankGreen1.png"),
@@ -26,13 +25,13 @@ extends Node
 
 
 func _on_new_game_button_pressed() -> void:
-	find_child("NewGameRect").show()
-	find_child("OptionsRect").hide()
+	$NewGamePopup.show()
+	$OptionsPopup.hide()
 
 
 func _on_options_button_pressed() -> void:
-	find_child("NewGameRect").hide()
-	find_child("OptionsRect").show()
+	$NewGamePopup.hide()
+	$OptionsPopup.show()
 
 
 func _on_quit_button_pressed() -> void:
@@ -63,7 +62,7 @@ func _on_music_volume_value_changed(value: float) -> void:
 
 
 func _on_fx_volume_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_about_and_info_pressed() -> void:
@@ -71,19 +70,20 @@ func _on_about_and_info_pressed() -> void:
 
 
 func _on_game_config_button_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_player_name_edit_text_changed(new_text: String) -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_player_name_edit_text_submitted(new_text: String) -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_is_fullscreen_pressed() -> void:
-	pass # Replace with function body.
+	pass
+
 
 func _on_start_new_game_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://src/stage.tscn")

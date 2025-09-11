@@ -1,22 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://bur60lolp2wre"]
+[gd_scene load_steps=5 format=3 uid="uid://bur60lolp2wre"]
 
 [ext_resource type="Script" uid="uid://djgbbpneyaomn" path="res://src/tank.gd" id="1_5vpi6"]
-[ext_resource type="Texture2D" uid="uid://c6obqa60l1px0" path="res://assets/tanks/tanks_tankGreen3.png" id="1_ropwu"]
+[ext_resource type="Texture2D" uid="uid://d3solt8vbapqb" path="res://assets/tanks/tanks_turret1.png" id="2_6jus6"]
+[ext_resource type="Texture2D" uid="uid://cl87e7n5mc2j4" path="res://assets/tanks/tanks_tankTracks1.png" id="2_e13sd"]
+[ext_resource type="Texture2D" uid="uid://c2fyrc0xu0nfi" path="res://assets/tanks/tanks_tankGreen_body1.png" id="3_e13sd"]
 
 [node name="Tank" type="Node2D"]
+visible = false
 script = ExtResource("1_5vpi6")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="RigidBody2D" parent="."]
 position = Vector2(0, -1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
-polygon = PackedVector2Array(-46, -36, -92, 5, -92, 31, -80, 57, -68, 69, 52, 69, 64, 57, 76, 31, 76, 4, 92, -27, 92, -55, -2, -67, -14, -67, -46, -55)
-
-[node name="Body" type="Sprite2D" parent="."]
-
-[node name="Turret" type="Sprite2D" parent="."]
-texture = ExtResource("1_ropwu")
+position = Vector2(0, 1)
+polygon = PackedVector2Array(-64, -16, -80, 17, -80, 33, -80, 48, -68, 69, 52, 69, 64, 64, 76, 31, 80, 17, 64, -15, 32, -31, 0, -47, -48, -47)
 
 [node name="Treads" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("2_e13sd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Treads"]
+
+[node name="Turret" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_6jus6")
+offset = Vector2(48, 0)
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("3_e13sd")
