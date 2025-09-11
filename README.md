@@ -6,7 +6,10 @@
 2. ???
 3. win
 
-## A Note on Jargon
+## A Note on Conventions and Jargon
+
+All angles are stored and expressed in the code as radians, except when it comes to the
+user-interface.
 
 Because Godot uses `direction` to refer to a node 2D's transform, and/or it may cause name clashes,
 the game logic will sometimes refer to "direction", but that is only with respect to, outside of the

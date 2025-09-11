@@ -291,6 +291,6 @@ flat = true
 [connection signal="value_changed" from="OptionsPopup/Label4/MusicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="OptionsPopup/Label5/FxVolume" to="." method="_on_fx_volume_value_changed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="AboutAndInfo" to="." method="_on_about_and_info_pressed"]

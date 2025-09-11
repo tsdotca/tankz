@@ -12,8 +12,9 @@ func _ready():
 
 
 func update():
+	$PlayerName.text = tank.name
 	$Angle.text = str(tank.angle)
 	$Power.text = str(tank.power)
-	$Direction.text = "--->" if tank.angle > 0 else "<---"
+	$Direction.text = "--->" if tank.angle < 0.5 else "<---"
 	$HP.text = str(tank.hp)
-	$Wind.text = str(get_parent().get_parent().wind)
+	$Wind.text = str(Tankz.state.wind_factor)

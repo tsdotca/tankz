@@ -25,7 +25,6 @@ anchor_bottom = 0.2
 offset_left = -0.128
 offset_right = 239.872
 offset_bottom = 23.0
-theme = ExtResource("2_j7ebe")
 text = "{{ angle }}"
 vertical_alignment = 1
 

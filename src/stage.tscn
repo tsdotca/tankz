@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bx74by21vgkfp"]
 
 [ext_resource type="Script" uid="uid://bbd6xxpde0y8g" path="res://src/stage.gd" id="1_b5ibw"]
-[ext_resource type="PackedScene" uid="uid://d03fnmb0wsyck" path="res://src/ui/gameui.tscn" id="1_ntm8r"]
+[ext_resource type="PackedScene" uid="uid://d03fnmb0wsyck" path="res://src/ui/game_ui.tscn" id="1_ntm8r"]
 [ext_resource type="Texture2D" uid="uid://uuy2v472jng7" path="res://assets/world/bliss.jpg" id="1_wg7ce"]
 [ext_resource type="PackedScene" uid="uid://bur60lolp2wre" path="res://src/tank.tscn" id="3_b5ibw"]
 [ext_resource type="Script" uid="uid://bjb7eamf7tquv" path="res://src/player.gd" id="4_udtb2"]
@@ -24,7 +24,7 @@ offset_left = 8.0
 offset_right = 1160.0
 offset_bottom = 648.0
 
-[node name="GameUi" parent="Control" node_paths=PackedStringArray("tank") instance=ExtResource("1_ntm8r")]
+[node name="GameUI" parent="Control" node_paths=PackedStringArray("tank") instance=ExtResource("1_ntm8r")]
 layout_mode = 1
 offset_left = -8.0
 offset_right = -8.0
@@ -32,6 +32,5 @@ offset_bottom = -576.0
 tank = NodePath("../../Tank")
 
 [node name="Tank" parent="." instance=ExtResource("3_b5ibw")]
-visible = true
 position = Vector2(112, 560)
 script = ExtResource("4_udtb2")

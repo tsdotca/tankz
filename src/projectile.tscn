@@ -9,14 +9,17 @@ size = Vector2(32, 32)
 [node name="Projectile" type="StaticBody2D"]
 light_mask = 2
 visibility_layer = 2
+z_index = 2
 script = ExtResource("1_2klnc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
+z_index = 2
 texture = ExtResource("2_dve2u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 visibility_layer = 2
+z_index = 2
 shape = SubResource("RectangleShape2D_dve2u")

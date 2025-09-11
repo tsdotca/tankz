@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c2fyrc0xu0nfi" path="res://assets/tanks/tanks_tankGreen_body1.png" id="3_e13sd"]
 
 [node name="Tank" type="Node2D"]
-visible = false
 script = ExtResource("1_5vpi6")
 
 [node name="CharacterBody2D" type="RigidBody2D" parent="."]
