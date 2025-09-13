@@ -60,6 +60,8 @@ class GameState extends Node:
 	@export var crumble_percent := 0.25
 	@export var background_name := "bliss.png"
 	
+	@export var gravity := 0.0
+	
 	enum WindForce {
 		CHAOS,
 		CALM,
@@ -82,9 +84,14 @@ class GameState extends Node:
 	@export var settings: int = 0xEF
 
 	@export var players := []	
-	@export var _wocntexts := []
+	@export var _wocontexts := []
 	@export var current_player := 0
 	@export var pending_projectile = null
+	
+	func _init():
+		# no fun allowed  >:(
+		if gravity == 0.0:
+			gravity = ProjectSettings.get_setting("physics/2d/default_gravity") / 200
 
 @export var preferences: AppPreferences = AppPreferences.new()
 @export var state: GameState

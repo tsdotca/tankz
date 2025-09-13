@@ -2,20 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bbd6xxpde0y8g" path="res://src/stage.gd" id="1_b5ibw"]
 [ext_resource type="PackedScene" uid="uid://d03fnmb0wsyck" path="res://src/ui/game_ui.tscn" id="1_ntm8r"]
-[ext_resource type="Texture2D" uid="uid://uuy2v472jng7" path="res://assets/world/bliss.jpg" id="1_wg7ce"]
 [ext_resource type="PackedScene" uid="uid://bur60lolp2wre" path="res://src/tank.tscn" id="3_b5ibw"]
-[ext_resource type="Script" uid="uid://bjb7eamf7tquv" path="res://src/player.gd" id="4_udtb2"]
+[ext_resource type="Script" uid="uid://mnwtuxvepukp" path="res://src/player.gd" id="4_udtb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ibw"]
+size = Vector2(1280, 832)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_b5ibw")
-
-[node name="Background" type="Sprite2D" parent="."]
-light_mask = 128
-visibility_layer = 128
-z_index = -1
-position = Vector2(576, 320)
-scale = Vector2(0.608333, 0.546667)
-texture = ExtResource("1_wg7ce")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -32,5 +26,12 @@ offset_bottom = -576.0
 tank = NodePath("../../Tank")
 
 [node name="Tank" parent="." instance=ExtResource("3_b5ibw")]
-position = Vector2(112, 560)
+position = Vector2(112, 280)
 script = ExtResource("4_udtb2")
+
+[node name="BoundingBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingBox"]
+position = Vector2(576, 224)
+shape = SubResource("RectangleShape2D_b5ibw")
+disabled = true
