@@ -9,14 +9,13 @@ const angle_rate := PI / 100
 @export var money := 0  #  >= 0
 
 # TODO: Refactor when multiple turret types are supported.
-const turret_offset = -32
-@export var projectile_spawn_offset := Vector2(96, turret_offset)
+const turret_offset = 32
 
 
 func fire_projectile():
 	var projectile = preload("res://src/projectile.tscn").instantiate() as Projectile
 	projectile.name = "Shot fired by %s" % name
-	projectile.position = position + scale * projectile_spawn_offset
+	projectile.position = position + Vector2(96 * cos(angle), turret_offset - turret_offset * sin(angle)) * scale
 	projectile.firepower = self.power
 	projectile.angle = self.angle
 	get_parent().add_child(projectile)

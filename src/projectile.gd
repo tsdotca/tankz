@@ -14,4 +14,4 @@ class_name Projectile extends Node2D
 func _physics_process(delta: float) -> void:
 	dt += delta
 	# Vector2(firepower / 10, -(Tankz.state.gravity * (angle - dt)))
-	position += _velocity + Vector2(0, firepower/50.0 + dt * Tankz.state.gravity)
+	position += _velocity + Vector2(0, firepower/50.0 + sqrt(dt) * Tankz.state.gravity)
