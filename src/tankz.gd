@@ -91,7 +91,7 @@ class GameState extends Node:
 	func _init():
 		# no fun allowed  >:(
 		if gravity == 0.0:
-			gravity = ProjectSettings.get_setting("physics/2d/default_gravity") / 200
+			gravity = ProjectSettings.get_setting("physics/2d/default_gravity") / 200.0
 
 @export var preferences: AppPreferences = AppPreferences.new()
 @export var state: GameState
@@ -106,3 +106,11 @@ class WipeoutContext extends Node:
 func _ready():
 	state = GameState.new()
 	
+	
+func change_stage_to(stage_name: String) -> void:
+	state.queue_free()
+	get_tree().change_scene_to_file(stage_name)
+	
+	
+func on_player_fire(player):
+	print("player %s fired" % player.name)

@@ -5,6 +5,7 @@ class_name Player extends Tank
 
 signal power_changed(power: float)
 signal angle_changed(angle: float)
+signal fired_projectile(player: Player)
 
 
 func _input(event):
@@ -16,7 +17,7 @@ func _input(event):
 	#
 
 	if event.is_action_pressed("p1_fire"):
-		fire_projectile()
+		emit_signal("fired_projectile", self)
 
 	##
 	elif event.is_action("p1_angle_up"):
