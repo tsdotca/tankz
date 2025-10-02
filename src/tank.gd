@@ -19,3 +19,6 @@ func fire_projectile():
 	projectile.firepower = self.power
 	projectile.angle = self.angle
 	get_parent().add_child(projectile)
+
+func on_fire_occurred():
+	print("it happened")

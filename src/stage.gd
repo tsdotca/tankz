@@ -14,8 +14,6 @@
 class_name Stage extends Node2D
 
 
-var _meat = []
-
 var wind: Vector2  # (direction, speed)
 var tanks := []
 var h := 640

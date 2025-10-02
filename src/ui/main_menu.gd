@@ -79,12 +79,6 @@ func on_is_fullscreen_toggled(toggled_on: bool) -> void:
 func on_is_vsync_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if toggled_on else DisplayServer.VSYNC_DISABLED)
 
-func on_music_volume_value_changed(value: float) -> void:
-	pass
-
-func on_fx_volume_value_changed(value: float) -> void:
-	pass
-
 
 func on_about_and_info_pressed() -> void:
 	print("i need to have some kind of webbrowser open url")

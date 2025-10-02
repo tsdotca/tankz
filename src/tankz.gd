@@ -11,11 +11,11 @@
 ##      This is where the explosions can get fun. I mean brutal.
 extends Node
 
-signal config_changed(new_config)
+signal config_changed(config)
 signal player_ui_updated
 
 
-class AppPreferences extends Resource:
+class Config extends Resource:
 	@export var fullscreen: int = ProjectSettings.get_setting("display/window/size/mode")
 	@export var resolution := [
 		ProjectSettings.get_setting("display/window/size/viewport_height"),
@@ -56,7 +56,7 @@ class GameState extends Node:
 	@export var prev_mode := Mode.PAUSED
 	
 	@export var tank_style := 0
-	@export var wind_factor := 1.0
+	@export var wind_factor := 1.0  # +/- force only
 	@export var crumble_percent := 0.25
 	@export var background_name := "bliss.png"
 	
@@ -93,7 +93,7 @@ class GameState extends Node:
 		if gravity == 0.0:
 			gravity = ProjectSettings.get_setting("physics/2d/default_gravity") / 200.0
 
-@export var preferences: AppPreferences = AppPreferences.new()
+@export var preferences: Config = Config.new()
 @export var state: GameState
 
 
@@ -114,3 +114,7 @@ func change_stage_to(stage_name: String) -> void:
 	
 func on_player_fire(player):
 	print("player %s fired" % player.name)
+
+# Calculate and normalise wind force.
+func wind():
+	return Vector2(Tankz.state.wind_factor, 0)

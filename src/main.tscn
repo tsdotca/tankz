@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://digi5yxpo6fk1"]
 
-[ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://src/ui/tank-reg.tres" id="1_5q4o7"]
+[ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://assets/ui/tank-reg.tres" id="1_5q4o7"]
 [ext_resource type="Script" uid="uid://cnon621o146kd" path="res://src/ui/main_menu.gd" id="1_eewff"]
 [ext_resource type="Script" uid="uid://d0glfb7hsub6s" path="res://src/ui/dialog.gd" id="2_5q4o7"]
 [ext_resource type="Texture2D" uid="uid://5qduesrn86o2" path="res://assets/ui/play.png" id="4_kmhfv"]
