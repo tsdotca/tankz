@@ -8,7 +8,6 @@ signal fired_projectile(player: Player)
 
 
 func _input(event):
-	# Prevent log spam
 	if event is InputEventMouseMotion:
 		return
 		
@@ -19,19 +18,17 @@ func _input(event):
 		# TODO: else play cranking sound
 		$Turret.rotation = angle
 
-	##
-	elif event.is_action("p1_power_up"):
+	elif event.is_action(&"p1_power_up"):
 		power = min(power + 1.0, 100.0)
 
-	elif event.is_action("p1_power_down"):
+	elif event.is_action(&"p1_power_down"):
 		power = max(power - 1.0, 0.0)
 		
-	elif event.is_action("p1_fire"):
+	elif event.is_action(&"p1_fire"):
 		fire_projectile()
 
-	##
 	else:
 		return
 
 	get_viewport().set_input_as_handled()
-	Tankz.emit_signal("player_ui_updated")
+	Tankz.emit_signal(&"player_ui_updated")
