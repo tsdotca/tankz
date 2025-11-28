@@ -35,6 +35,12 @@ class_name MainMenu extends Node
 func _ready():
 	_tank_preview.texture = _tank_previews[_current_tank]
 	_tankfx_preview.texture = _fx_previews[_current_fx]
+	
+	# FIXME: The (C ) rubbish is wonky. font needs proper kerning
+	$CopyrightAndVersionInfo.text = "%s v%s. Copyright (C ) 2025 shrine studios" % [
+		ProjectSettings.get_setting("application/config/name"),
+		ProjectSettings.get_setting("application/config/version")
+	]
 
 
 func on_new_game_button_pressed() -> void:
