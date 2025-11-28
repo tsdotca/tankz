@@ -13,7 +13,7 @@ config_version=5
 config/name="tankz"
 config/description="A recreation of one of the games lexer grew up playing -- with improved graphics and features!"
 run/main_scene="uid://digi5yxpo6fk1"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="uid://n0s0gw1obcwi"
 config/icon="uid://n0s0gw1obcwi"
 
