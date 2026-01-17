@@ -51,17 +51,6 @@ class GameState extends Node:
 		WIPEOUT,
 	}
 	
-	@export var mode := Mode.DEMO
-	## The mode resumed after pausing, e.g., interacting with menus.
-	@export var prev_mode := Mode.PAUSED
-	
-	@export var tank_style := 0
-	@export var wind_factor := 1.0  # +/- force only
-	@export var crumble_percent := 0.25
-	@export var background_name := "bliss.png"
-	
-	@export var gravity := 0.0
-	
 	enum WindForce {
 		CHAOS,
 		CALM,
