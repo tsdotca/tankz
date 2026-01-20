@@ -1,5 +1,12 @@
+class_name Bot extends Tank
 ## src/bot.gd
-class_name Bot extends Node # controls Tank
+## Beep boop driven tank logic, with a variety of "personalities". Each
+## personality has its own rules governing its playstyle, which is further
+## modified by a difficulty level.
+##
+## For example, the "sharpshooter" personality prefers to aim directly at tanks
+## whenever possible, and at easy is "usually" accurate; at hard, the bot
+## always "snipes" its enemies.
 
 # ai logic:
 #   on each turn, rank players according to danger level

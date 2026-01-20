@@ -4,9 +4,10 @@ class_name MainMenu extends Node
 @export var _tank_preview: TextureRect
 @export var _tankfx_preview: TextureRect
 
-@export var _current_tank := 0
-@export var _current_fx := 0
+@export var _current_tank: int = 0
+@export var _current_fx: int = 0
 
+# TODO: relocate this stuff so it doesn't clog the instantiation of the main menu
 @export var _tank_previews: Array = [
 	preload("res://assets/tanks/tanks_tankGreen1.png"),
 	preload("res://assets/tanks/tanks_tankGreen2.png"),
@@ -32,12 +33,12 @@ class_name MainMenu extends Node
 ]
 
 
-func _ready():
+func _ready() -> void:
 	_tank_preview.texture = _tank_previews[_current_tank]
 	_tankfx_preview.texture = _fx_previews[_current_fx]
-	
+
 	# FIXME: The (C ) rubbish is wonky. font needs proper kerning
-	$CopyrightAndVersionInfo.text = "%s v%s. Copyright (C ) 2025 shrine studios" % [
+	$CopyrightAndVersionInfo.text = "%s v%s. Copyright (C ) 2026 shrine studios. All rights reserved." % [
 		ProjectSettings.get_setting("application/config/name"),
 		ProjectSettings.get_setting("application/config/version")
 	]

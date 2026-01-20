@@ -21,7 +21,7 @@ class Config extends Resource:
 		ProjectSettings.get_setting("display/window/size/viewport_height"),
 		ProjectSettings.get_setting("display/window/size/viewport_height"),
 	]
-	@export var vsync: bool = ProjectSettings.get_setting("display/window/size/mode")
+	@export var vsync: bool = ProjectSettings.get_setting("display/window/vsync/vsync_mode")
 
 
 class GameState extends Node:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d03fnmb0wsyck"]
 
-[ext_resource type="Script" uid="uid://d082x21hm2m4j" path="res://src/ui/game_ui.gd" id="1_fsbhu"]
+[ext_resource type="Script" uid="uid://b7fjq4bku8ywg" path="res://src/ui/game_ui.gd" id="1_fsbhu"]
 [ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://assets/ui/tank-reg.tres" id="2_j7ebe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rnkn6"]

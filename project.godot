@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Tankz!"
+config/name_localized={
+"de": "Panzer!",
+"en": "Tankz!",
+"fr": "Chars d'assaut!",
+"th": "ช่วยด้วย ฉันติดอยู่ในกล่อง"
+}
 config/description="A recreation of one of the games lexer grew up playing -- with improved graphics and features!"
 config/version="0.0.1"
 run/main_scene="uid://digi5yxpo6fk1"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="tankz"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="uid://n0s0gw1obcwi"
 config/icon="uid://n0s0gw1obcwi"
