@@ -7,6 +7,8 @@ class_name MainMenu extends Node
 @export var _current_tank: int = 0
 @export var _current_fx: int = 0
 
+@export var _menu_anim_perturb: float = 0.0
+
 # TODO: relocate this stuff so it doesn't clog the instantiation of the main menu
 @export var _tank_previews: Array = [
 	preload("res://assets/tanks/tanks_tankGreen1.png"),
@@ -32,6 +34,7 @@ class_name MainMenu extends Node
 	preload("res://assets/tanks/tanks_crateAmmo.png")
 ]
 
+@onready var shader: ShaderMaterial = $RichTextLabel.material as ShaderMaterial
 
 func _ready() -> void:
 	_tank_preview.texture = _tank_previews[_current_tank]
@@ -42,6 +45,13 @@ func _ready() -> void:
 		ProjectSettings.get_setting("application/config/name"),
 		ProjectSettings.get_setting("application/config/version")
 	]
+
+
+func _process(delta) -> void:
+	_menu_anim_perturb += 0.01 + delta
+	if _menu_anim_perturb > 1.0:
+		_menu_anim_perturb = 0.0
+	shader.set_shader_parameter("perturb", _menu_anim_perturb)
 
 
 func on_new_game_button_pressed() -> void:

@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://digi5yxpo6fk1"]
+[gd_scene load_steps=10 format=3 uid="uid://digi5yxpo6fk1"]
 
 [ext_resource type="Theme" uid="uid://buk1fpldabkaf" path="res://assets/ui/tank-reg.tres" id="1_5q4o7"]
-[ext_resource type="Script" uid="uid://cnon621o146kd" path="res://src/ui/main_menu.gd" id="1_eewff"]
-[ext_resource type="Script" uid="uid://d0glfb7hsub6s" path="res://src/ui/dialog.gd" id="2_5q4o7"]
-[ext_resource type="PackedScene" uid="uid://cvp084pbnml4l" path="res://src/ui/options_popup.tscn" id="3_rlaii"]
+[ext_resource type="Script" uid="uid://6fhrij13j053" path="res://src/ui/main_menu.gd" id="1_eewff"]
+[ext_resource type="Script" uid="uid://bg0fw2ba03ex8" path="res://src/ui/dialog.gd" id="2_5q4o7"]
+[ext_resource type="Shader" uid="uid://2t3khpy1na4f" path="res://src/title_text.gdshader" id="3_rlaii"]
+[ext_resource type="PackedScene" uid="uid://cvp084pbnml4l" path="res://src/ui/options_popup.tscn" id="4_5mrjc"]
 [ext_resource type="Texture2D" uid="uid://5qduesrn86o2" path="res://assets/ui/play.png" id="4_kmhfv"]
 [ext_resource type="Texture2D" uid="uid://cut8v5bvy8srs" path="res://assets/ui/tile_0073.png" id="5_rlaii"]
 [ext_resource type="Texture2D" uid="uid://c0smlvbxm5b3j" path="res://assets/ui/tile_0072.png" id="6_5mrjc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mrjc"]
+shader = ExtResource("3_rlaii")
+shader_parameter/start_color = Color(0.28905815, 0.7462612, 0.6348977, 1)
+shader_parameter/end_color = Color(0.8387745, 0.32186112, 0.54186654, 1)
+shader_parameter/perturb = 0.0
 
 [node name="MainMenu" type="ColorRect" node_paths=PackedStringArray("_tank_preview", "_tankfx_preview")]
 offset_right = 1280.0
@@ -17,6 +24,21 @@ script = ExtResource("1_eewff")
 _tank_preview = NodePath("NewGamePopup/TankPreviewContainer/TankPreview")
 _tankfx_preview = NodePath("NewGamePopup/TankFxContainer/FxPreview")
 metadata/_edit_horizontal_guides_ = [-80.0]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_5mrjc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 279.0
+offset_top = 50.0
+offset_right = -347.0
+offset_bottom = -492.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[font_size=128px][center]TANKZ![/center][/font_size]"
 
 [node name="NewGameButton" type="Button" parent="."]
 layout_mode = 0
@@ -33,6 +55,14 @@ offset_top = 304.0
 offset_right = 640.0
 offset_bottom = 335.0
 text = "options"
+
+[node name="OptionsPopup" parent="." instance=ExtResource("4_5mrjc")]
+visible = false
+layout_mode = 0
+offset_left = 648.0
+offset_top = 304.0
+offset_right = 1016.0
+offset_bottom = 576.0
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
@@ -82,9 +112,9 @@ text = "X"
 layout_mode = 0
 offset_left = 12.0
 offset_top = 228.0
-offset_right = 228.0
+offset_right = 332.0
 offset_bottom = 259.0
-text = "game settings..."
+text = "Configure game settings..."
 
 [node name="Label" type="Label" parent="NewGamePopup"]
 layout_mode = 0
@@ -188,14 +218,6 @@ offset_right = 444.0
 offset_bottom = 260.0
 text = "PLAY!"
 icon = ExtResource("4_kmhfv")
-
-[node name="OptionsPopup" parent="." instance=ExtResource("3_rlaii")]
-visible = false
-layout_mode = 0
-offset_left = 392.0
-offset_top = 208.0
-offset_right = 760.0
-offset_bottom = 448.0
 
 [connection signal="pressed" from="NewGameButton" to="." method="on_new_game_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="on_options_button_pressed"]
